@@ -1,16 +1,29 @@
 package com.roadoffthemap.roadoffthemap.controller
 
+import com.roadoffthemap.roadoffthemap.model.Word
+import com.roadoffthemap.roadoffthemap.repository.WordRepository
 import com.roadoffthemap.roadoffthemap.service.SearchService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.*
 
 @RestController
 class SearchController(
-    val searchService: SearchService
+    @Autowired var searchService: SearchService,
 ){
-    @GetMapping("/search/{word}")
-    fun searchWord(@PathVariable word: String): String{
-        return searchService.searchWord(word)
+    @GetMapping("search")
+    fun search_word(@RequestParam word: String): List<Word>{
+        return searchService.search_word(word)
+    }
+
+}
+
+@RestController
+class WordController(
+    @Autowired var wordRepository: WordRepository
+)
+{
+    @PostMapping("words")
+    fun save_word(@RequestBody word: Word): Word{
+        return wordRepository.save(word)
     }
 }
