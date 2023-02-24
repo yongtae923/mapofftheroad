@@ -1,6 +1,5 @@
 package com.roadoffthemap.roadoffthemap.Util
 
-import com.github.f4b6a3.ulid.Ulid
 import com.github.f4b6a3.ulid.UlidCreator
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
@@ -12,10 +11,10 @@ import java.util.*
 import kotlin.jvm.Transient
 
 @MappedSuperclass
-abstract class BaseEntity : Persistable<UUID> {
+abstract class BaseEntity : Persistable<String> {
     @Id
-    @Column(columnDefinition = "uuid")
-    private val id: UUID = UlidCreator.getMonotonicUlid().toUuid()
+    @Column
+    private val id: String = UlidCreator.getMonotonicUlid().toLowerCase()
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
@@ -27,7 +26,7 @@ abstract class BaseEntity : Persistable<UUID> {
     @Transient
     private var _isNew = true
 
-    override fun getId(): UUID = id
+    override fun getId(): String = id
 
     override fun isNew(): Boolean = _isNew
 
