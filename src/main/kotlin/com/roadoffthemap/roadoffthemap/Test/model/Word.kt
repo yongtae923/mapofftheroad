@@ -1,4 +1,4 @@
-package com.roadoffthemap.roadoffthemap.model
+package com.roadoffthemap.roadoffthemap.Test.model
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

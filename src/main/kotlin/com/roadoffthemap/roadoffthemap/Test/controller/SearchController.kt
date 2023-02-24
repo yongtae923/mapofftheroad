@@ -1,8 +1,8 @@
-package com.roadoffthemap.roadoffthemap.controller
+package com.roadoffthemap.roadoffthemap.Test.controller
 
-import com.roadoffthemap.roadoffthemap.model.Word
-import com.roadoffthemap.roadoffthemap.repository.WordRepository
-import com.roadoffthemap.roadoffthemap.service.SearchService
+import com.roadoffthemap.roadoffthemap.Test.model.Word
+import com.roadoffthemap.roadoffthemap.Test.repository.WordRepository
+import com.roadoffthemap.roadoffthemap.Test.service.SearchService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
@@ -23,7 +23,7 @@ class WordController(
 )
 {
     @PostMapping("words")
-    fun save_word(@RequestBody word: Word): Word{
+    fun save_word(@RequestBody word: Word): Word {
         return wordRepository.save(word)
     }
 }

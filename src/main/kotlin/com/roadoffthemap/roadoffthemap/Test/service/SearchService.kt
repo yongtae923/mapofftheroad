@@ -1,7 +1,7 @@
-package com.roadoffthemap.roadoffthemap.service
+package com.roadoffthemap.roadoffthemap.Test.service
 
-import com.roadoffthemap.roadoffthemap.model.Word
-import com.roadoffthemap.roadoffthemap.repository.WordRepository
+import com.roadoffthemap.roadoffthemap.Test.model.Word
+import com.roadoffthemap.roadoffthemap.Test.repository.WordRepository
 import org.springframework.stereotype.Service
 
 @Service

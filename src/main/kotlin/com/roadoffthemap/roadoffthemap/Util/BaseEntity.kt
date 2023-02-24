@@ -1,5 +1,6 @@
-package com.roadoffthemap.roadoffthemap.auth.domain
+package com.roadoffthemap.roadoffthemap.Util
 
+import com.github.f4b6a3.ulid.Ulid
 import com.github.f4b6a3.ulid.UlidCreator
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
@@ -20,9 +21,8 @@ abstract class BaseEntity : Persistable<UUID> {
     @Column(nullable = false, updatable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()
 
-    @CreationTimestamp
     @Column(nullable = true)
-    val deletedAt: LocalDateTime? = null
+    var deletedAt: LocalDateTime? = null
 
     @Transient
     private var _isNew = true
