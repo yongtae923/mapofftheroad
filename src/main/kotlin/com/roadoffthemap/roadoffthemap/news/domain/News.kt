@@ -1,6 +1,6 @@
 package com.roadoffthemap.roadoffthemap.news.domain
 
-import com.roadoffthemap.roadoffthemap.Util.BaseEntity
+import com.roadoffthemap.roadoffthemap.util.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Table

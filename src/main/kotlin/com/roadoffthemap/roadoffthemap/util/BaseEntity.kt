@@ -1,4 +1,4 @@
-package com.roadoffthemap.roadoffthemap.Util
+package com.roadoffthemap.roadoffthemap.util
 
 import com.github.f4b6a3.ulid.UlidCreator
 import jakarta.persistence.*
@@ -13,7 +13,7 @@ import kotlin.jvm.Transient
 @MappedSuperclass
 abstract class BaseEntity : Persistable<String> {
     @Id
-    @Column
+    @Column(columnDefinition = "CHAR(26)")
     private val id: String = UlidCreator.getMonotonicUlid().toLowerCase()
 
     @CreationTimestamp

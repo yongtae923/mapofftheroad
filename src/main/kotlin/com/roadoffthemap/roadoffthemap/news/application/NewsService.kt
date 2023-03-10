@@ -9,7 +9,10 @@ import java.util.*
 
 @Service
 class NewsService(private val newsRepository: NewsRepository) {
-    fun getAllNews(): List<News> = newsRepository.findAll()
+    fun getAllNews(): List<News> {
+        val news = newsRepository.findAll()
+        return news
+    }
 
     fun getNewsById(id: String): News? = newsRepository.findByIdOrNull(id)
 
