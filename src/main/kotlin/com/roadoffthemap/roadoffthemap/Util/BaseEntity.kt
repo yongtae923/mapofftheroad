@@ -1,4 +1,4 @@
-package com.roadoffthemap.roadoffthemap.util
+package com.roadoffthemap.roadoffthemap.Util
 
 import com.github.f4b6a3.ulid.UlidCreator
 import jakarta.persistence.*

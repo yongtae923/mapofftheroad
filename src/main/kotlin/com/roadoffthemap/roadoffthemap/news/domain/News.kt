@@ -1,6 +1,6 @@
 package com.roadoffthemap.roadoffthemap.news.domain
 
-import com.roadoffthemap.roadoffthemap.util.BaseEntity
+import com.roadoffthemap.roadoffthemap.Util.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Table
@@ -19,8 +19,14 @@ class News: BaseEntity() {
     var press: String? = null
 
     @Column
-    var publishedDate: Date? = null
+    var author: String? = null
+
+    @Column
+    var published_at: Date? = null
 
     @Column
     var thumbnail: String? = null
+
+    @Column
+    var keywords: List<String> = emptyList<String>()
 }

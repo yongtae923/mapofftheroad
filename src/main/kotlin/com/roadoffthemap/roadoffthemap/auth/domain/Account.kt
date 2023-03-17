@@ -1,6 +1,6 @@
 package com.roadoffthemap.roadoffthemap.auth.domain
 
-import com.roadoffthemap.roadoffthemap.util.BaseEntity
+import com.roadoffthemap.roadoffthemap.Util.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Table
